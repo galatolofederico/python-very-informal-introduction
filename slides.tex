@@ -399,6 +399,23 @@ greet(**person)
     \end{minted}
 \end{frame}
 
+\begin{frame}[fragile]
+    \frametitle{Functions(8): Decorators}
+    \texttt{Decorators} are a way to dynamical add functionalities to a function.\\
+    Simple \texttt{decorators} can be defined as a function returning a generic wrapper function\\
+    \begin{minted}{python}
+    def prettify(func):
+        def wrapper(*args, **kwargs):
+            print("%"*50)
+            func(*args, **kwargs)
+            print("%"*50)
+        return wrapper
+
+    @prettify
+    def hello():
+        print("Hi there!")
+    \end{minted}
+\end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Classes(1)}
